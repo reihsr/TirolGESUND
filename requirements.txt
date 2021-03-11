@@ -2,3 +2,9 @@ flask
 jproperties
 authlib
 connexion
+connexion[swagger-ui]
+Flask-SQLAlchemy
+flask-marshmallow
+marshmallow-sqlalchemy
+marshmallow
+psycopg2
