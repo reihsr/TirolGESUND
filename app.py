@@ -1,11 +1,13 @@
 from flask import Flask, render_template
 from jproperties import Properties
+import connexion
 
 configs = Properties()
 with open('config.properties', 'rb') as config_file:
     configs.load(config_file)
 
-app = Flask(__name__, template_folder="templates")
+app = connexion.App(__name__, template_folder="templates", specification_dir='./')
+app.add_api('swagger.yml')
 
 
 @app.route('/')
