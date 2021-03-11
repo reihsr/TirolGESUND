@@ -1,0 +1,8 @@
+#Garmin App Keys
+CONSUMER_KEY=
+CONSUMER_SECRET=
+REQUEST_TOKEN_URL=https://connectapi.garmin.com/oauth-service/oauth/request_token
+AUTHENTICATE_URL=https://connect.garmin.com/oauthConfirm
+FETCH_ACCESS_TOKEN_URL=https://connectapi.garmin.com/oauth-service/oauth/access_token
+#Flask Configuration
+SQLALCHEMY_DATABASE_URI=postgresql://USERNAME:PASSWORD@localhost:5432/DATABSE

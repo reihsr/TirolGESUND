@@ -1,4 +1,5 @@
 from flask import Flask
+from jproperties import Properties
 
 app = Flask(__name__)
 
