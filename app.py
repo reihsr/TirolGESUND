@@ -67,7 +67,7 @@ def testPage():
 @app.route('/createDB')
 def createDB():
     config.db.create_all()
-    return render_template('home.html', 'DB Created.')
+    return render_template('home.html', msg_text='DB Created.')
 
 if __name__ == '__main__':
     app.run(host=configs.get("HOST").data, debug=configs.get("DEBUG").data)
