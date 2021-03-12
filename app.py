@@ -30,7 +30,7 @@ def auth():
     participant.oauth_verifier = oauth_verifier
 
     client = OAuth1Session(configs.get("CONSUMER_KEY").data, configs.get("CONSUMER_SECRET").data,
-                           token=oauth_token, verifier=oauth_verifier)
+                           token=oauth_token, token_secret=oauth_verifier)
     client.parse_authorization_response(request.url)
     token = client.fetch_access_token(configs.get("FETCH_ACCESS_TOKEN_URL").data, verifier=oauth_verifier)
     participant.user_oauth_token = token['oauth_token']
