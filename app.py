@@ -29,8 +29,8 @@ def auth():
     participant = Participant.query.filter_by(oauth_token=oauth_token).first()
     participant.oauth_verifier = oauth_verifier
 
-    client = OAuth1Session(configs.get("CONSUMER_KEY").data, configs.get("CONSUMER_SECRET").data,
-                           oauth_token=oauth_token, oauth_verifier=oauth_verifier)
+    client = OAuth1Session(client_id=configs.get("CONSUMER_KEY").data, client_secret=configs.get("CONSUMER_SECRET").data,
+                           token=oauth_token, token_secret=participant.oauth_token_secret)
     client.parse_authorization_response(request.url)
     token = client.fetch_access_token(configs.get("FETCH_ACCESS_TOKEN_URL").data, verifier=oauth_verifier)
     participant.user_oauth_token = token['oauth_token']
