@@ -4,7 +4,7 @@ from config import db, ma
 class Participant(db.Model):
     __tablename__ = "participant"
     study_id = db.Column('study_id', db.String(100), primary_key=True)
-    study = db.Column('study_id', db.String(100))
+    study = db.Column('study', db.String(100))
     oauth_token = db.Column(db.String(100))
     oauth_token_secret = db.Column(db.String(100))
     oauth_verifier = db.Column(db.String(100))
@@ -15,7 +15,7 @@ class Participant(db.Model):
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
     )
 
-class ParticipantSchema(ma.ModelSchema):
+class ParticipantSchema(ma.Schema):
     class Meta:
         model = Participant
         sqla_session = db.session

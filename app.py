@@ -18,6 +18,7 @@ app = config.app
 
 alredyRegisterd = "You are alredy registerd to the Portal. Thank you."
 doneRegisterd = "Thank you for registering to the project Portal."
+testRegisterd = "Test Output Massage."
 
 @app.route('/auth')
 def auth():
@@ -48,7 +49,7 @@ def home():
     authorization_url = client.create_authorization_url(configs.get("AUTHENTICATE_URL").data,
                                                         request_token['oauth_token'])
     if participant == None:
-        participant = Participant(id=studyid, oauth_token=request_token['oauth_token'],
+        participant = Participant(study_id=studyid, oauth_token=request_token['oauth_token'],
                                   oauth_token_secret=request_token['oauth_token_secret'],
                                   authorization_redirect_url=authorization_url)
         config.db.session.add(participant)
@@ -59,6 +60,14 @@ def home():
     config.db.session.commit()
     return redirect(authorization_url, code=302)
 
+@app.route('/testPage')
+def testPage():
+    return render_template('home.html', msg_text=testRegisterd)
+
+@app.route('/createDB')
+def createDB():
+    config.createDB()
+    return render_template('home.html', 'DB Created.')
 
 if __name__ == '__main__':
     app.run(host=configs.get("HOST").data, debug=configs.get("DEBUG").data)
