@@ -5,15 +5,89 @@
         <title>TirolGESUND</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <style>
+            .bg-eutops {
+                background-color: #467691;
+            }
+            .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+                color: #4DCF82;
+            }
+            .navbar-dark .navbar-nav .nav-link {
+                color: #DCEDB4;
+            }
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                color: #DCEDB4;
+            }
+            .footer a {
+                color: #DCEDB4;
+            }
+            .footer a:hover{
+                color:#83CD7F;
+            }
+            footer .partners .partner {
+                float: left;
+                width: 80px;
+                height: 80px;
+                margin: 0 1em 1em 0;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+            .container {
+                max-width: 1632px;
+            }
+            footer .contactList .icon-mail {
+                background-image: url({{url_for('static', filename='icon-mail-active.svg')}});
+            }
+            footer .contactList .icon-phone {
+                background-image: url({{url_for('static', filename='icon-phone-active.svg')}});
+            }
+            footer .contactList .icon-location {
+                background-image: url({{url_for('static', filename='icon-location-active.svg')}});
+            }
+            footer .contactList .icon {
+                padding-left: 3em !important;
+            }
+            footer .contactList li {
+                margin-bottom: 1.5em;
+            }
+            .icon {
+                padding-left: 1em;
+                background-repeat: no-repeat;
+                background-size: 25px;
+                background-position: 0 40%;
+            }
+            li {
+                display: list-item;
+                text-align: -webkit-match-parent;
+            }
+            footer .contactList ul {
+                list-style-type: none;
+            }
+            .alert {
+              padding: 20px;
+              background-color: #f44336;
+              color: white;
+            }
+            .alert:empty {
+              display: none;
+            }
+
+        </style>
     </head>
     <body class="d-flex flex-column h-100">
 
         <header>
           <!-- Fixed navbar -->
-          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-eutops">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                  <img src="{{url_for('static', filename='logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+              <a class="navbar-brand" href="https://eutops.institute/">
+                  <img src="{{url_for('static', filename='eutops-logo.svg')}}" height="30" class="d-inline-block align-top" alt="">
                   TirolGESUND
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +102,10 @@
                     <a class="nav-link" href="https://connect.garmin.com/account">Revoke data sharing</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Privacy Statement</a>
+                    <a class="nav-link" href="/privacyStatement">Privacy Statement</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#" >Inprint</a>
+                    <a class="nav-link" href="https://eutops.institute/" >eutrops</a>
                   </li>
                 </ul>
               </div>
@@ -43,13 +117,66 @@
         <main class="flex-shrink-0" style="margin-top: 30px;">
           <div class="container">
             <h1 class="mt-5">Thank you for participating in the Project!</h1>
-            <p class="lead">{{ msg_text }}</p>
+            <p class="lead">{{ msg_text }}</p><p class="lead alert">{{ msg_text_error }}</p>
           </div>
         </main>
 
-        <footer class="footer mt-auto py-3 bg-light">
+        <footer class="footer mt-auto py-3 bg-eutops">
           <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
+            <div class="footer-cols">
+				<div class="container">
+					<div class="container">
+						<div class="cc cc-8-2-2 row">
+							<div class="col col1 col-12 col-lg-8">
+								<div class="cc cc-6-6 row">
+									<div class="col col1 col-md-6">
+										<div id="c4" class="ce ce-text contactList">
+											<h4>Get in touch</h4>
+											<div class="ce-text-content">
+												<ul>
+													<li class="icon icon-location">Clinical facilities<br> Milser Straße 10, A-6060 Hall in Tirol, Austria</li>
+													<li class="icon icon-location">Laboratory<br> Hauptstraße 100, A-6511 Zams, Austria</li>
+													<li class="icon icon-phone"><a href="tel:+43676872550406">+43 (0)676 872550406</a></li>
+													<li class="icon icon-mail"><a href="mailto:info@eutops.at">info@eutops.at</a></li>
+													 </ul>
+												 </div>
+											 </div>
+									</div>
+									<div class="col col2 partners">
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='tirol.jpg')}}" loading="lazy" alt="Land Tirol"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='universitaet-innsbruck-logo-rgb-farbe.png')}}" loading="lazy" alt="Universität Innsbruck"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='erc.jpg')}}" loading="lazy" alt="ERC"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='eve-appeal.jpg')}}" loading="lazy" alt="The Eve Appeal"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='tk.jpg')}}" loading="lazy" alt="Tirol Kliniken"></div>
+										 </div>
+									 </div>
+								 </div>
+							<div class="col col3 col-12 col-md-6 col-lg-4 bordered-left">
+								<div id="c45" class="ce ce-text socialLinks">
+									<h4>Follow us</h4>
+									 </div>
+								<div class="ce ce-text socialLinks">
+									<div class="ce-text-content">
+										<ul>
+											<li class="linkedin"><a href="https://www.linkedin.com/company/european-translational-oncology-prevention-screening-institute/" target="_blank"><img src="{{url_for('static', filename='icon-linkedin.svg')}}"></a></li>
+											 </ul>
+										 </div>
+									 </div>
+							</div>
+						 </div>
+					<div class="container">
+						<div class="cc cc-12 row">
+							<div class="col col1 col-md-12">
+								<div id="c1651" class="ce ce-text">
+									<div class="ce-text-content">
+										<p>©2021 EUTOPS&nbsp;European Translational Oncology Prevention &amp; Screening Institute. All rights reserved.</p>
+										 </div>
+									 </div>
+							</div>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
           </div>
         </footer>
 

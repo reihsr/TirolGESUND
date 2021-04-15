@@ -19,6 +19,7 @@ app = config.app
 alredyRegisterd = "You are alredy registerd to the Portal. Thank you."
 doneRegisterd = "Thank you for registering to the project Portal."
 testRegisterd = "Test Output Massage."
+errorStudyIdNotSet = "ERROR: No Study ID defined!"
 
 @app.route('/auth')
 def auth():
@@ -36,14 +37,16 @@ def auth():
     participant.user_oauth_token = token['oauth_token']
     participant.user_oauth_token_secret = token['oauth_token_secret']
     config.db.session.commit()
-    return render_template('home.html', msg_text=doneRegisterd)
+    return render_template('home.html', msg_text=doneRegisterd, msg_text_error='')
 
 @app.route('/')
 def home():
     studyid = request.args.get('studyid')
+    if studyid == None:
+        return render_template('home.html', msg_text='', msg_text_error=errorStudyIdNotSet)
     participant = Participant.query.filter_by(study_id=studyid).first()
     if participant != None and participant.oauth_verifier != None:
-        return render_template('home.html', msg_text=alredyRegisterd)
+        return render_template('home.html', msg_text=alredyRegisterd, msg_text_error='')
     client = OAuth1Session(configs.get("CONSUMER_KEY").data, configs.get("CONSUMER_SECRET").data)
     client.redirect_uri = configs.get("REDIRECT_URI").data
     request_token = client.fetch_request_token(configs.get("REQUEST_TOKEN_URL").data)
@@ -63,12 +66,16 @@ def home():
 
 @app.route('/testPage')
 def testPage():
-    return render_template('home.html', msg_text=testRegisterd)
+    return render_template('home.html', msg_text=testRegisterd, msg_text_error='')
+
+@app.route('/privacyStatement')
+def privacyStatement():
+    return render_template('privacyStatement.html')
 
 @app.route('/createDB')
 def createDB():
     config.db.create_all()
-    return render_template('home.html', msg_text='DB Created.')
+    return render_template('home.html', msg_text='DB Created.', msg_text_error='')
 
 if __name__ == '__main__':
     app.run(host=configs.get("HOST").data, debug=configs.get("DEBUG").data)

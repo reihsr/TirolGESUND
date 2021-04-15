@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TirolGESUND</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <style>
+            .bg-eutops {
+                background-color: #467691;
+            }
+            .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+                color: #4DCF82;
+            }
+            .navbar-dark .navbar-nav .nav-link {
+                color: #DCEDB4;
+            }
+            .footer {
+                width: 100%;
+                color: #DCEDB4;
+            }
+            .footer a {
+                color: #DCEDB4;
+            }
+            .footer a:hover{
+                color:#83CD7F;
+            }
+            footer .partners .partner {
+                float: left;
+                width: 80px;
+                height: 80px;
+                margin: 0 1em 1em 0;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+            .container {
+                max-width: 1632px;
+            }
+            footer .contactList .icon-mail {
+                background-image: url({{url_for('static', filename='icon-mail-active.svg')}});
+            }
+            footer .contactList .icon-phone {
+                background-image: url({{url_for('static', filename='icon-phone-active.svg')}});
+            }
+            footer .contactList .icon-location {
+                background-image: url({{url_for('static', filename='icon-location-active.svg')}});
+            }
+            footer .contactList .icon {
+                padding-left: 3em !important;
+            }
+            footer .contactList li {
+                margin-bottom: 1.5em;
+            }
+            .icon {
+                padding-left: 1em;
+                background-repeat: no-repeat;
+                background-size: 25px;
+                background-position: 0 40%;
+            }
+            li {
+                display: list-item;
+                text-align: -webkit-match-parent;
+            }
+            footer .contactList ul {
+                list-style-type: none;
+            }
+            .alert {
+              padding: 20px;
+              background-color: #f44336;
+              color: white;
+            }
+            .alert:empty {
+              display: none;
+            }
+
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100">
+
+        <header>
+          <!-- Fixed navbar -->
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-eutops">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                  <img src="{{url_for('static', filename='eutops-logo.svg')}}" height="30" class="d-inline-block align-top" alt="">
+                  TirolGESUND
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Project Page</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://connect.garmin.com/account">Revoke data sharing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/privacyStatement">Privacy Statement</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" >Inprint</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Begin page content -->
+        <main class="flex-shrink-0" style="margin-top: 75px;">
+          <div class="container" style="color: #467691;">
+              <h2>Introduction</h2>
+              <p>The EUTOPS Institute (“we” or “us” or “our”) respects the privacy of our users (“user” or “you”). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [eutops.at, eutops.institute] or our TirolGESUND Garmin Application, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the “Site”). Please read this privacy policy carefully.  If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+
+              <p>We reserve the right to make changes to this Privacy Policy at any time and for any reason.  We will alert you about any changes by updating the “Last Updated” date of this Privacy Policy.  Any changes or modifications will be effective immediately upon posting the updated Privacy Policy on the Site, and you waive the right to receive specific notice of each such change or modification.</p>
+
+              <p>You are encouraged to periodically review this Privacy Policy to stay informed of updates. You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted the changes in any revised Privacy Policy by your continued use of the Site after the date such revised Privacy Policy is posted. </p>
+
+              <p>Note: This privacy policy was created using Termly.</p>
+
+              <h2>Collection of your information</h2>
+
+              <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+
+              <h3>Personal Data</h3>
+
+              <p>Personally identifiable information, such as your name, shipping address, email address, and telephone number, and demographic information, such as your age, gender, hometown, and interests, that you voluntarily give to us when you choose to participate in various activities related to the Site, such as study registration. You are under no obligation to provide us with personal information of any kind, however your refusal to do so may prevent you from using certain features of the Site.</p>
+
+              <h3>Derivative Data</h3>
+
+              <p>Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</p>
+
+              <h3>Mobile Device Data</h3>
+
+              <p>Device information, such as your mobile device ID, model, and manufacturer, and information about the location of your device, if you access the Site from a mobile device.</p>
+
+              <h3>Study Device Data</h3>
+
+              <p>When you register with the TirolGESUND Garmin app - as part of the TirolGESUND study -, activity- and health-related data will be collected in a coded and pseudonymised manner without direct personal information.</p>
+
+              <h3>Connect Garmin with TirolGESUND</h3>
+
+              <p>By connecting with your app, you agree to share information from your Garmin Connect account with TirolGESUND. This will enable us to access and analyse data relating to your activity, step count, heart rate, and other activity- or health-related data. Your data will only be stored and analysed in a coded manner (pseudonymised), i.e. not linked to any of your personal data.</p>
+
+              <p>After completion of the study you can keep your Garmin Device and remove the connection in the Garmin Connect Settings. If you have any further questions, please don’t hesitate to reach out to the study team under info@eutops.at. </p>
+
+              <h2>Use of your information</h2>
+
+              <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience.  Specifically, we may use information collected about you via the Site or Garmin Connect app:</p>
+
+              <ul>
+                  <li>Compile anonymous statistical data and analysis for use internally or with third parties.</li>
+                  <li>Email you regarding your study participation.</li>
+                  <li>Increase the efficiency and operation of the Site.</li>
+                  <li>Monitor and analyze usage and trends to improve your experience with the Site.</li>
+                  <li>Garmin TirolGESUND app: health- and activity-related data - only relating to participants of the TirolGESUND study - analysis.</li>
+              </ul>
+
+              <h2>Disclosure of your information</h2>
+
+              <p>We may share information we have collected about you in certain situations. Your information may be disclosed as follows: </p>
+
+              <h3>By Law or to Protect Rights</h3>
+
+              <p>If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</p>
+
+              <h2>Tracking technologies</h2>
+
+              <h3>Cookies and Web Beacons</h3>
+
+              <p>We may use cookies on the Site to help customize the Site and improve your experience. When you access the Site, your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies, but be aware that such action could affect the availability and functionality of the Site. For more information on how we use cookies, please refer to our Cookie Policy posted on the Site, which is incorporated into this Privacy Policy. By using the Site, you agree to be bound by our Cookie Policy.</p>
+
+              <h3>Website Analytics</h3>
+
+              <p>We may also partner with selected third-party vendors, such as Google Analytics and others, to allow tracking technologies and remarketing services on the Site through the use of first party cookies and third-party cookies, to, among other things, analyze and track users’ use of the Site, determine the popularity of certain content and better understand online activity. By accessing the Site, you consent to the collection and use of your information by these third-party vendors. You are encouraged to review their privacy policy and contact them directly for responses to your questions. We do not transfer personal information to these third-party vendors. However, if you do not want any information to be collected and used by tracking technologies, you can visit the third-party vendor or the Network Advertising Initiative Opt-Out Toolor Digital Advertising Alliance Opt-Out Tool.</p>
+
+              <p>You should be aware that getting a new computer, installing a new browser, upgrading an existing browser, or erasing or otherwise altering your browser’s cookies files may also clear certain opt-out cookies, plug-ins, or settings.</p>
+
+              <h2>Third-party websites</h2>
+
+              <p>The Site may contain links to third-party websites and applications of interest, including advertisements and external services, that are not affiliated with us. Once you have used these links to leave the Site, any information you provide to these third parties is not covered by this Privacy Policy, and we cannot guarantee the safety and privacy of your information. Before visiting and providing any information to any third-party websites, you should inform yourself of the privacy policies and practices (if any) of the third party responsible for that website, and should take those steps necessary to, in your discretion, protect the privacy of your information. We are not responsible for the content or privacy and security practices and policies of any third parties, including other sites, services or applications that may be linked to or from the Site.</p>
+
+              <h2>Security of your information</h2>
+
+              <p>We use administrative, technical, and physical security measures to help protect your personal information.  While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.  Any information disclosed online is vulnerable to interception and misuse by unauthorized parties. Therefore, we cannot guarantee complete security if you provide personal information.</p>
+
+              <h2>Policy for children</h2>
+
+              <p>We do not knowingly solicit information from or market to children under the age of 13. If you become aware of any data we have collected from children under age 13, please contact us using the contact information provided below.</p>
+
+              <h2>Controls for do-not-track features</h2>
+
+              <p>Most web browsers and some mobile operating systems include a Do-Not-Track (“DNT”) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected.  No uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Policy./Most web browsers and some mobile operating systems include a Do-Not-Track (“DNT”) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. If you set the DNT signal on your browser, we will respond to such DNT browser signals.</p>
+
+              <h2>Options regarding your information</h2>
+
+              <h3>Emails and Communications</h3>
+
+              <p>If you no longer wish to receive correspondence, emails, or other communications from us, you may opt-out by:</p>
+
+              <ul>
+                  <li>Noting your preferences at the time you register your account with the Site.</li>
+                  <li>Contacting us using the contact information provided below</li>
+              </ul>
+
+              <h2>Contact us</h2>
+
+              <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+              <p>
+                    EUTOPS Institute<br />
+                    University of Innsbruck<br />
+                    A.ö. Landeskrankenhaus Hall in Tirol<br />
+                    Milser Str. 10<br />
+                    A-6060 Hall in Tirol<br />
+                    Austria<br />
+                    info@eutops.institute<br />
+                    <a href="https://eutops.institute/">https://eutops.institute/</a></p>
+
+          </div>
+        </main>
+
+        <footer class="footer mt-auto py-3 bg-eutops">
+          <div class="container">
+            <div class="footer-cols">
+				<div class="container">
+					<div class="container">
+						<div class="cc cc-8-2-2 row">
+							<div class="col col1 col-12 col-lg-8">
+								<div class="cc cc-6-6 row">
+									<div class="col col1 col-md-6">
+										<div id="c4" class="ce ce-text contactList">
+											<h4>Get in touch</h4>
+											<div class="ce-text-content">
+												<ul>
+													<li class="icon icon-location">Clinical facilities<br> Milser Straße 10, A-6060 Hall in Tirol, Austria</li>
+													<li class="icon icon-location">Laboratory<br> Hauptstraße 100, A-6511 Zams, Austria</li>
+													<li class="icon icon-phone"><a href="tel:+43676872550406">+43 (0)676 872550406</a></li>
+													<li class="icon icon-mail"><a href="mailto:info@eutops.at">info@eutops.at</a></li>
+													 </ul>
+												 </div>
+											 </div>
+									</div>
+									<div class="col col2 partners">
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='tirol.jpg')}}" loading="lazy" alt="Land Tirol"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='universitaet-innsbruck-logo-rgb-farbe.png')}}" loading="lazy" alt="Universität Innsbruck"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='erc.jpg')}}" loading="lazy" alt="ERC"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='eve-appeal.jpg')}}" loading="lazy" alt="The Eve Appeal"></div>
+										<div class="partner"><img class="image-embed-item img-fluid" src="{{url_for('static', filename='tk.jpg')}}" loading="lazy" alt="Tirol Kliniken"></div>
+										 </div>
+									 </div>
+								 </div>
+							<div class="col col3 col-12 col-md-6 col-lg-4 bordered-left">
+								<div id="c45" class="ce ce-text socialLinks">
+									<h4>Follow us</h4>
+									 </div>
+								<div class="ce ce-text socialLinks">
+									<div class="ce-text-content">
+										<ul>
+											<li class="linkedin"><a href="https://www.linkedin.com/company/european-translational-oncology-prevention-screening-institute/" target="_blank"><img src="{{url_for('static', filename='icon-linkedin.svg')}}"></a></li>
+											 </ul>
+										 </div>
+									 </div>
+							</div>
+						 </div>
+					<div class="container">
+						<div class="cc cc-12 row">
+							<div class="col col1 col-md-12">
+								<div id="c1651" class="ce ce-text">
+									<div class="ce-text-content">
+										<p>©2021 EUTOPS&nbsp;European Translational Oncology Prevention &amp; Screening Institute. All rights reserved.</p>
+										 </div>
+									 </div>
+							</div>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+          </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>
